@@ -5,7 +5,9 @@ using System.Xml.Linq;
 namespace _4
 {
 	public class Note<T> : ICloneable, IComparable
+
 	{
+		private int[] birthday = new int[3];  
 		public string UserName { get; private set; }
 		public T Number { get; private set; }
 		public int[] Birthday { get; private set; }
@@ -26,23 +28,23 @@ namespace _4
 
 		public int CompareTo(object? obj)
 		{
-            if (obj is Note<T> note)
-            {
+			if (obj is Note<T> note)
+			{
 				return string.Compare(this.UserName, note?.UserName);
-            }
-            else
-                throw new Exception("Невозможно сравнить");
+			}
+			else
+				throw new Exception("Невозможно сравнить");
 
 
-        }
+		}
 
-        public override string? ToString()
-        {
-            return $"Имя: {UserName} Number: {Number} " +
-                $"Birthday: {Birthday}";
-        }
+		public override string? ToString()
+		{
+			return $"Имя: {UserName} Number: {Number} " +
+				$"Birthday: {Birthday}";
+		}
 
-    }
+	}
 }
 
 

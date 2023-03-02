@@ -19,11 +19,11 @@ class Program
             Console.WriteLine(item);
         }
         Console.WriteLine();
-        //Array.Sort(notes, new SortByAmmo());
-        //foreach (var item in notes)
-        //{
-        //    Console.WriteLine(item);
-        //}
+        Array.Sort(notes, new OldeerSort<int>());
+        foreach (var item in notes)
+        {
+            Console.WriteLine(item);
+        }
 
     }
 }
